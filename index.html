@@ -5,26 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pong Game</title>
-    <script src="index.js"></script>
+    
 </head>
 <body>
-    <div id="container">
+<main>
+    <div class="container">
     <h1>PONG</h1>
-    <canvas id="game" height="500" width="700"></canvas>
+    <canvas id="canvas" height="500" width="700"></canvas>
     </div>
+</main>
+
     <style>
-        #game{
+        #canvas{
             text-align: center;
             border: 1px solid;
-        }
-        #container{
-            text-align: center;
+            background-color: rgb(223, 199, 167);
+            
         }
         h1{
             font-family: sans-serif;
-            font-size: 45px;
+            font-size: 50px;
+            color:white;
         }
-    </style>
-    
+        .container{
+            text-align:center;
+        }
+        body{
+            background-color: black;
+        }
+    </style> 
+    <script src="index.js"></script>
 </body>
 </html>
