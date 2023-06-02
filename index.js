@@ -2,6 +2,11 @@ const canvas=document.getElementById('canvas');
 const context=canvas.getContext('2d');
 context.canvas;
 
+context.font = '50px Arial';
+context.fillStyle='green';
+context.fillText('0 - 0', 305, 75)
+
+
 //objects
 function leftPaddle(){ 
     context.beginPath();   
@@ -22,18 +27,18 @@ function ball(){
     context.fill();
     context.closePath();
 }
+//key movements
+//document.addEventListener('keydown',)
+
+//restart button
+document.getElementById('reset').addEventListener('mouseover',mouseOver);
+function mouseOver(){
+    document.getElementById('reset').style.cursor='pointer';
+}
+
+
 
 leftPaddle();
 rightPaddle();
 ball();
 
-//keydown function
-/*document.addEventListener('keydown', function(e){
-    if (e.repeat) return;
-    if(e.key === 'ArrowUp'){
-        direction = 'north'
-    }
-    if(e.key === 'ArrowDown'){
-        direction = 'south'
-    }
-})*/
