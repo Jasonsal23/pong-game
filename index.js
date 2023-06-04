@@ -2,6 +2,11 @@ const canvas=document.getElementById('canvas');
 const context=canvas.getContext('2d');
 context.canvas;
 
+let x=25
+let y=200
+let direction =null
+
+//scoreboard`
 context.font = '50px Arial';
 context.fillStyle='green';
 context.fillText('0 - 0', 305, 75)
@@ -28,12 +33,14 @@ function ball(){
     context.closePath();
 }
 //key movements
-//document.addEventListener('keydown',)
+
 
 //restart button
 document.getElementById('reset').addEventListener('mouseover',mouseOver);
 function mouseOver(){
-    document.getElementById('reset').style.cursor='pointer';
+    document.getElementById('reset').style.cursor='pointer';  
+    
+
 }
 
 
