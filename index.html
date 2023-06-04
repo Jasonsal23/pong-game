@@ -9,34 +9,67 @@
 </head>
 <body>
 <main>
-    <div class="container">
+    
     <h1>PONG</h1>
-    <canvas id="canvas" height="500" width="700"></canvas>
+    
+    <div id="board" >
+        <div id="leftpaddle"></div>
+        <div id="rightpaddle"></div>
+        <div id="ball"></div>
     </div>
+    
 </main>
 <div class="btn">
     <button type="button" id="reset" onclick="window.location.reload()">Reset</button>
 </div>
 
     <style>
-        #canvas{
+        #board{
             text-align: center;
             border: 1px solid;
             background-color: rgb(223, 199, 167);
+            height: 500px;
+            width:700px;
+            margin:auto;
         }
         h1{
             font-family: sans-serif;
             font-size: 50px;
             color:white;
-        }
-        .container{
-            text-align:center;
+            text-align: center;
         }
         body{
             background-color: black;
         }
         .btn{
             text-align:center;
+        }
+        #leftpaddle{
+            height: 100px;
+            width:10px;
+            border:1px solid;
+            background-color: blue;
+            position:relative;
+            left:25px;
+            top: 200px;
+        }
+        #rightpaddle{
+            height: 100px;
+            width:10px;
+            border:1px solid;
+            background-color: red;
+            position:relative;
+            left:670px;
+            top: 100px;
+        }
+        #ball{
+            height:10px;
+            width:10px;
+            border-radius: 50%;
+            background-color: white;
+            position:relative;
+            left:350px;
+            top:50px;
         }
     </style> 
     <script src="index.js"></script>

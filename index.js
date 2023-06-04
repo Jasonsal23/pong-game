@@ -1,51 +1,49 @@
-const canvas=document.getElementById('canvas');
-const context=canvas.getContext('2d');
-context.canvas;
 
-let x=25
-let y=200
-let direction =null
-
-//scoreboard`
-context.font = '50px Arial';
-context.fillStyle='green';
-context.fillText('0 - 0', 305, 75)
-
+const lP = document.getElementById('leftpaddle')
 
 //objects
-function leftPaddle(){ 
-    context.beginPath();   
-    context.fillStyle= "blue";
-    context.fillRect(25,200,10,100);
-    context.closePath();
+function leftPaddle(y){ 
+    console.log(lP.style)
+    let top = parseInt(lP.style.top, 10);
+    lP.style.top = top + y +'px';
+    
 }
 function rightPaddle(){
-    context.beginPath();
-    context.fillStyle='red';
-    context.fillRect(670,200,10,100);
-    context.closePath();
+  
 }
 function ball(){
-    context.beginPath();
-    context.fillStyle='white';
-    context.arc(350,250,8,0,Math.PI*2);
-    context.fill();
-    context.closePath();
+  
 }
 //key movements
 
+document.addEventListener('keydown', move, false);
+document.addEventListener('keyup', keyUp, false);
+var key=[];
 
+function move(e){
+    let y = 0;
+    key[e.keyCode]=true;
+    if(key[40]){
+        y+=2;
+    }
+    if(key[38]){
+        y-=2;
+    }
+    e.preventDefault();
+    leftPaddle(y);
+    console.log(y)
+}
+function keyUp(e){
+    key[e.keyCode]=false;
+}
 //restart button
 document.getElementById('reset').addEventListener('mouseover',mouseOver);
 function mouseOver(){
     document.getElementById('reset').style.cursor='pointer';  
-    
-
 }
 
 
 
-leftPaddle();
-rightPaddle();
-ball();
+
+
 
