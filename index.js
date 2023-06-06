@@ -1,15 +1,17 @@
-
-const lP = document.getElementById('leftpaddle')
+const lP = document.getElementById('leftpaddle');
+const rP = document.getElementById('rightpaddle');
+let rightTop = 100;
+let leftTop =200;
 
 //objects
 function leftPaddle(y){ 
-    console.log(lP.style)
-    let top = parseInt(lP.style.top, 10);
-    lP.style.top = top + y +'px';
-    
+    console.log(leftTop);
+    lP.style.top = leftTop + y +'px';
+    console.log(leftTop+y+'px');
+    leftTop += y;
 }
 function rightPaddle(){
-  
+  console.log(rightTop);
 }
 function ball(){
   
@@ -24,10 +26,10 @@ function move(e){
     let y = 0;
     key[e.keyCode]=true;
     if(key[40]){
-        y+=2;
+        y+=20;
     }
     if(key[38]){
-        y-=2;
+        y-=20;
     }
     e.preventDefault();
     leftPaddle(y);
