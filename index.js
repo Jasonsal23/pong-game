@@ -11,7 +11,10 @@ function leftPaddle(y){
     leftTop += y;
 }
 function rightPaddle(){
-  console.log(rightTop);
+    console.log(rightTop);
+    rP.style.top =rightTop + y + 'px';
+    console.log(rightTop+y+'px');
+    rightTop -= y;
 }
 function ball(){
   
@@ -19,6 +22,7 @@ function ball(){
 //key movements
 
 document.addEventListener('keydown', move, false);
+
 document.addEventListener('keyup', keyUp, false);
 var key=[];
 
@@ -29,6 +33,19 @@ function move(e){
         y+=20;
     }
     if(key[38]){
+        y-=20;
+    }
+    e.preventDefault();
+    rightPaddle(y);
+    console.log(y)
+}
+function move(e){
+    let y = 0;
+    key[e.keyCode]=true;
+    if(key[83]){
+        y+=20;
+    }
+    if(key[87]){
         y-=20;
     }
     e.preventDefault();
@@ -43,9 +60,3 @@ document.getElementById('reset').addEventListener('mouseover',mouseOver);
 function mouseOver(){
     document.getElementById('reset').style.cursor='pointer';  
 }
-
-
-
-
-
-
