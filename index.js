@@ -4,6 +4,10 @@ const puck =document.getElementById('ball');
 const board = document.getElementById('board');
 let rightTop = 100;
 let leftTop =200;
+let ballTop = 50;
+let ballLeft =350;
+let ballSpeedX=2;
+let ballSpeedY =2;
 
 //objects
 function leftPaddle(y){ 
@@ -19,6 +23,10 @@ function rightPaddle(y){
     rightTop += y;
 }
 function ball(){
+    ballTop += ballSpeedY;
+    ballLeft += ballSpeedX;
+    puck.style.top = ballTop +'px';
+    puck.style.left = ballLeft + 'px';
 }
 
 //key movements
@@ -53,7 +61,6 @@ function move(e){
     e.preventDefault();
     leftPaddle(y);
     //console.log(y)
-    
 }
 function moveR(e){
     const maxY = 297;
@@ -85,9 +92,17 @@ function keyUp(e){
     key[e.keyCode]=false;
 }
 
+//ball movement
+if(ballTop<=0 || ballTop>=0){
+    ballSpeedY = -ballSpeedY;
+}
+if(ballLeft<=0 || ballLeft>=0){
+    ballSpeedX = -ballSpeedX;
+}
 
 //restart button
 document.getElementById('reset').addEventListener('mouseover',mouseOver);
 function mouseOver(){
     document.getElementById('reset').style.cursor='pointer';  
 }
+setInterval(ball, 20);
