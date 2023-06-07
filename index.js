@@ -27,6 +27,13 @@ function ball(){
     ballLeft += ballSpeedX;
     puck.style.top = ballTop +'px';
     puck.style.left = ballLeft + 'px';
+
+if(ballTop<=-201 || ballTop>= 286){
+    ballSpeedY = -ballSpeedY;
+}
+if(ballLeft<=0 || ballLeft>=690){
+    ballSpeedX = -ballSpeedX;
+}
 }
 
 //key movements
@@ -90,14 +97,6 @@ function moveR(e){
 }
 function keyUp(e){
     key[e.keyCode]=false;
-}
-
-//ball movement
-if(ballTop<=0 || ballTop>=0){
-    ballSpeedY = -ballSpeedY;
-}
-if(ballLeft<=0 || ballLeft>=0){
-    ballSpeedX = -ballSpeedX;
 }
 
 //restart button
