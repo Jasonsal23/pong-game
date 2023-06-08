@@ -35,22 +35,40 @@ function ball(){
 if(ballTop<=-201 || ballTop>= 286){
     ballSpeedY = -ballSpeedY;
 }
+if (
+    ballLeft <= 36 && 
+    ballTop + 100 >= leftTop && 
+    ballTop <= leftTop + 100 
+    ) {
+    ballSpeedX = -ballSpeedX;
+    }
+if (
+    ballLeft + 20 >= 680 && 
+    ballTop + 100 >= rightTop && 
+    ballTop <= rightTop + 100 
+    ) {
+    ballSpeedX = -ballSpeedX;
+    }
+
 if(ballLeft<=0 || ballLeft>=690){
     ballSpeedX = -ballSpeedX;
 }
+
+
 //Score for the game
 if(ballLeft<=0){
-    lScore++;
-    leftScore.textContent=lScore;
-    ballTop = 50;
-    ballLeft = 350;
-}
-if(ballLeft>=690){
     rScore++;
     rightScore.textContent=rScore;
     ballTop = 50;
     ballLeft = 350;
 }
+if(ballLeft>=690){
+    lScore++;
+    leftScore.textContent=lScore;
+    ballTop = 50;
+    ballLeft = 350;
+}
+
 //gameover
 if(lScore===7){
     console.log('Left Player Wins')
@@ -135,5 +153,3 @@ function mouseOver(){
 setTimeout(function(){
     setInterval(ball, 20);
 },3000)
-
-
