@@ -131,5 +131,9 @@ document.getElementById('reset').addEventListener('mouseover',mouseOver);
 function mouseOver(){
     document.getElementById('reset').style.cursor='pointer';  
 }
-setInterval(ball, 20);
+
+setTimeout(function(){
+    setInterval(ball, 20);
+},3000)
+
 
