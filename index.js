@@ -2,12 +2,16 @@ const lP = document.getElementById('leftpaddle');
 const rP = document.getElementById('rightpaddle');
 const puck =document.getElementById('ball');
 const board = document.getElementById('board');
+const leftScore=document.getElementById('leftscore');
+const rightScore=document.getElementById('rightscore');
 let rightTop = 100;
 let leftTop =200;
 let ballTop = 50;
 let ballLeft =350;
 let ballSpeedX=2;
 let ballSpeedY =2;
+let lScore = 0;
+let rScore =0;
 
 //objects
 function leftPaddle(y){ 
@@ -34,10 +38,33 @@ if(ballTop<=-201 || ballTop>= 286){
 if(ballLeft<=0 || ballLeft>=690){
     ballSpeedX = -ballSpeedX;
 }
+//Score for the game
+if(ballLeft<=0){
+    lScore++;
+    leftScore.textContent=lScore;
+    ballTop = 50;
+    ballLeft = 350;
+}
+if(ballLeft>=690){
+    rScore++;
+    rightScore.textContent=rScore;
+    ballTop = 50;
+    ballLeft = 350;
+}
+//gameover
+if(lScore===7){
+    console.log('Left Player Wins')
+    alert('Game Over, Left Player Wins')
+    
+}
+if(rScore===7){
+    console.log('Right Player Wins')
+    alert('Game Over, Right Player Wins')
+    
+}
 }
 
 //key movements
-
 document.addEventListener('keydown', move, false);
 document.addEventListener('keydown', moveR, false);
 document.addEventListener('keyup', keyUp, false);
@@ -105,3 +132,4 @@ function mouseOver(){
     document.getElementById('reset').style.cursor='pointer';  
 }
 setInterval(ball, 20);
+
