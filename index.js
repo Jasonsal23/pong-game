@@ -43,6 +43,7 @@ if (
     ) {
     ballSpeedX = -ballSpeedX;
     }
+    
 if (
     ballLeft + 20 >= 680 && 
     ballTop + 100 >= rightTop && 
