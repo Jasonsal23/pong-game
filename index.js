@@ -35,7 +35,6 @@ function ball(){
 if(ballTop<=-201 || ballTop>= 286){
     ballSpeedY = -ballSpeedY;
 }
-
 //ball bouncing off paddles
 if (
     ballLeft <=35 && 
@@ -43,7 +42,7 @@ if (
     ) {
     ballSpeedX = -ballSpeedX;
     }
-    
+
 if (
     ballLeft + 20 >= 680 && 
     ballTop + 100 >= rightTop && 
