@@ -35,24 +35,28 @@ function ball(){
 if(ballTop<=-201 || ballTop>= 286){
     ballSpeedY = -ballSpeedY;
 }
+
+//ball bouncing off paddles
 if (
-    ballLeft <= 36 && 
-    ballTop + 100 >= leftTop && 
-    ballTop <= leftTop + 100 
+    ballLeft <=35 && 
+    ballTop +20 <= leftTop +80
     ) {
     ballSpeedX = -ballSpeedX;
     }
 if (
     ballLeft + 20 >= 680 && 
     ballTop + 100 >= rightTop && 
-    ballTop <= rightTop + 100 
+    ballTop <= rightTop  
     ) {
     ballSpeedX = -ballSpeedX;
     }
 
-if(ballLeft<=0 || ballLeft>=690){
+/*if(
+    ballLeft<=35 &&
+    ballTop +100 >= leftTop 
+    ){
     ballSpeedX = -ballSpeedX;
-}
+}*/
 
 
 //Score for the game
@@ -151,5 +155,5 @@ function mouseOver(){
 }
 
 setTimeout(function(){
-    setInterval(ball, 20);
+    setInterval(ball, 10);
 },3000)
