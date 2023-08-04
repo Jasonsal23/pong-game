@@ -38,9 +38,9 @@ if(ballTop<=-201 || ballTop>= 286){
 //ball bouncing off paddles
 if (
     ballLeft <=35 && 
-    ballTop +20 <= leftTop +80
-    ) {
-    ballSpeedX = -ballSpeedX;
+    Math.abs(leftTop-(ballTop+200))<=100
+    ){
+        ballSpeedX = -ballSpeedX
     }
 
 if (
@@ -57,7 +57,8 @@ if (
     ){
     ballSpeedX = -ballSpeedX;
 }*/
-
+console.log(ballLeft)
+console.log(leftTop)
 
 //Score for the game
 if(ballLeft<=0){
